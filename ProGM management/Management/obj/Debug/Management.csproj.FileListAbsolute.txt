@@ -1,0 +1,40 @@
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\bin\Debug\Test.exe.config
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\obj\Debug\Test.exe
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\obj\Debug\Test.pdb
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\bin\Debug\Test.exe
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\bin\Debug\Test.pdb
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\obj\Debug\Test.Menu.resources
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\obj\Debug\Test.Properties.Resources.resources
+C:\Users\quoct\OneDrive\Documents\Visual Studio 2012\Projects\Management\Management\obj\Debug\Management.csproj.GenerateResource.Cache
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.csprojResolveAssemblyReference.cache
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.csproj.GenerateResource.Cache
+D:\Project\Gamer management\Management\Management\bin\Debug\Management.exe.config
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Menu.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.exe.licenses
+D:\Project\Gamer management\Management\Management\bin\Debug\Management.exe
+D:\Project\Gamer management\Management\Management\bin\Debug\Management.pdb
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.exe
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.pdb
+D:\Project\Gamer management\Management\Management\bin\Debug\EntityFramework.dll
+D:\Project\Gamer management\Management\Management\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Gamer management\Management\Management\bin\Debug\EntityFramework.xml
+D:\Project\Gamer management\Management\Management\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.NhatKyHeThong.NhatKyHeThong.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.NhatKySuDung.NhatKySuDung.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.NhomNguoiDung.NhomNguoiDung.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TaiKhoan.TaiKhoan.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TinhTrangHoatDong.TinhTrang.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TaiKhoan.frmNapTien.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TaiKhoan.frmNKNapTien.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TaiKhoan.frmNKSuDung.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TaiKhoan.frmSua.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TaiKhoan.frmThemMoi.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Properties.Resources.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.NhomMay.NhomMay.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.DichVu.DichVu.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.TinhTrangHoatDong.TinhTrangChiTiet.resources
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.Views.DangNhap.DangNhap.resources
+D:\Project\Gamer management\Management\Management\bin\Debug\Management.exe.manifest
+D:\Project\Gamer management\Management\Management\bin\Debug\Management.application
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.exe.manifest
+D:\Project\Gamer management\Management\Management\obj\Debug\Management.application

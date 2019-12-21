@@ -1,0 +1,9 @@
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\bin\Debug\Test.exe.config
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\obj\Debug\Test.Menu.resources
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\obj\Debug\Test.Properties.Resources.resources
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\bin\Debug\Test.exe
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\bin\Debug\Test.pdb
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\obj\Debug\Test.exe
+c:\users\quoct\onedrive\documents\visual studio 2012\Projects\Test\Test\obj\Debug\Test.pdb
