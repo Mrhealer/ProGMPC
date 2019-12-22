@@ -1,9 +1,0 @@
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\bin\Debug\ServerSoket.exe.config
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\bin\Debug\ServerSoket.exe
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\bin\Debug\ServerSoket.pdb
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\obj\Debug\ServerSoket.csprojResolveAssemblyReference.cache
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\obj\Debug\ServerSoket.Form1.resources
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\obj\Debug\ServerSoket.Properties.Resources.resources
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\obj\Debug\ServerSoket.csproj.GenerateResource.Cache
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\obj\Debug\ServerSoket.exe
-c:\users\quoct\onedrive\documents\visual studio 2012\Projects\ServerSoket\ServerSoket\obj\Debug\ServerSoket.pdb
