@@ -6,6 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using Management;
+using Management.Views.DangNhap;
 
 namespace Management
 {
@@ -21,7 +22,7 @@ namespace Management
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new Menu());
+            Application.Run(new DangNhap());
         }
     }
 }

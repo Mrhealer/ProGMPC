@@ -33,6 +33,8 @@ namespace Management.Views.DangNhap
             if (txtTaiKhoan.Text == "quoctv" || txtMatKhau.Text == "123456789")
             {
                 this.Hide();
+                Menu main = new Menu();
+                main.ShowDialog();
             }
         }
     }

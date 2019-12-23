@@ -11,6 +11,11 @@ using DevExpress.XtraEditors;
 using Management.Model;
 using Management.Controller;
 using Management.Views.TaiKhoan;
+using RestSharp;
+using Newtonsoft.Json;
+using DevExpress.XtraGrid.Views.Tile;
+using DevExpress.XtraGrid.Views.Tile.ViewInfo;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Management.Views.TinhTrangHoatDong
 {
@@ -31,21 +36,27 @@ namespace Management.Views.TinhTrangHoatDong
             dt.Columns.Add("NamePC");
             dt.Columns.Add("Old");
             dt.Columns.Add("Group");
-            for (int i = 1; i < 21; i++)
+            dt.Columns.Add("Price");
+            dt.Columns.Add("MacID");
+            dt.Columns.Add("IsOnline");
+
+            var client = new RestClient("http://40.74.77.139/api/?key=computerList&startItem=0&endItem=100&branchId=3a5ba8d1-1fbe-11ea-83f9-001e67bb704a");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Connection", "keep-alive");
+            request.AddHeader("accept-encoding", "gzip, deflate");
+            request.AddHeader("Host", "40.74.77.139");
+            request.AddHeader("Cache-Control", "no-cache");
+            request.AddHeader("Accept", "*/*");
+            request.AddHeader("Authorization", "Basic d2ViOjEyMw==");
+            IRestResponse response = client.Execute(request);
+            if (!string.IsNullOrEmpty(response.Content))
             {
-                dt.Rows.Add("MÁY " + i, "19", "NHÓM A");
-            }
-            for (int i = 21; i < 41; i++)
-            {
-                dt.Rows.Add("MÁY " + i, "19", "NHÓM B");
-            }
-            for (int i = 41; i < 61; i++)
-            {
-                dt.Rows.Add("MÁY " + i, "19", "NHÓM C");
-            }
-            for (int i = 61; i < 81; i++)
-            {
-                dt.Rows.Add("MÁY " + i, "19", "NHÓM D");
+                responseListPC responseData = JsonConvert.DeserializeObject<responseListPC>(response.Content);
+                foreach (var item in responseData.listComputerbyOfficeId)
+                {
+                    dt.Rows.Add(item.pcName,item.pcCode, item.pcGroupName,item.pcPrice, item.pcMacAddress, false);
+                }
             }
             grdTinhTrang.DataSource = dt;
         }
@@ -57,6 +68,7 @@ namespace Management.Views.TinhTrangHoatDong
 
         private void PopupMenuShowing(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -67,9 +79,26 @@ namespace Management.Views.TinhTrangHoatDong
 
         private void tileView1_ItemRightClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
+            var xx =   grdTinhTrang.GetViewAt(Control.MousePosition);
 
+      
+            var x = e.Item.Elements[1];
+            TileView view = sender as TileView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            TileViewHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.ItemInfo != null)
+            {
+                //TileItemElementViewInfo elementInfo = hitInfo.ItemInfo.Cells.FirstOrDefault(t => t.EntireElementBounds.Contains(pt));
+                //if (elementInfo != null)
+                //{
+                //    string text = elementInfo.Element.Text;
+                //}
+            }
+
+            // var data = e.BindableControls["Address"] as TextEdit;;
+            //var x = grdTinhTrang.getr(e.Item.RowHandle) as;
             System.Drawing.Point p2 = Control.MousePosition;
-            popupMenu1.ShowPopup(p2);
+            popupMenuPC.ShowPopup(p2);
 
         }
 
@@ -79,5 +108,16 @@ namespace Management.Views.TinhTrangHoatDong
             napTien.Show();
         }
 
+        private void menuShowChat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+          var id =   tileView1.GetFocusedRowCellValue("MacID");
+        }
+
+        private void tileView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            //var Id = tileView1.GetFocusedRowCellValue("MacID");
+            //MessageBox.Show(Id.ToString(),"Thoong bao");
+
+        }
     }
 }

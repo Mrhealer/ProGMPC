@@ -44,6 +44,8 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             this.NamePC = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.Price = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.MacID = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -62,11 +64,11 @@
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.Group = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.grdTinhTrang = new DevExpress.XtraGrid.GridControl();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenuPC = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOpenPC = new DevExpress.XtraBars.BarButtonItem();
+            this.menuBlockPC = new DevExpress.XtraBars.BarButtonItem();
+            this.menuShowChat = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -75,6 +77,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.IsOnline = new DevExpress.XtraGrid.Columns.TileViewColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelTinhTrang)).BeginInit();
             this.panelTinhTrang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
@@ -84,7 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTinhTrang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuPC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +98,22 @@
             this.NamePC.Name = "NamePC";
             this.NamePC.Visible = true;
             this.NamePC.VisibleIndex = 0;
+            // 
+            // Price
+            // 
+            this.Price.Caption = "Price";
+            this.Price.FieldName = "Price";
+            this.Price.Name = "Price";
+            this.Price.Visible = true;
+            this.Price.VisibleIndex = 3;
+            // 
+            // MacID
+            // 
+            this.MacID.Caption = "MacID";
+            this.MacID.FieldName = "MacID";
+            this.MacID.Name = "MacID";
+            this.MacID.Visible = true;
+            this.MacID.VisibleIndex = 1;
             // 
             // labelControl8
             // 
@@ -275,14 +294,17 @@
             this.tileView1.Appearance.GroupText.Options.UseFont = true;
             this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.NamePC,
-            this.Group});
+            this.Group,
+            this.Price,
+            this.MacID,
+            this.IsOnline});
             this.tileView1.ColumnSet.GroupColumn = this.Group;
             this.tileView1.GridControl = this.grdTinhTrang;
             this.tileView1.Name = "tileView1";
             this.tileView1.OptionsTiles.IndentBetweenGroups = 13;
             this.tileView1.OptionsTiles.IndentBetweenItems = 7;
             this.tileView1.OptionsTiles.ItemPadding = new System.Windows.Forms.Padding(4);
-            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(126, 90);
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(160, 90);
             this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.tileView1.OptionsTiles.Padding = new System.Windows.Forms.Padding(0);
             this.tileView1.OptionsTiles.RowCount = 0;
@@ -316,7 +338,7 @@
             tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement1.StretchHorizontal = true;
             tileViewItemElement1.Text = "NamePC";
-            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement2.ImageOptions.Image = global::Management.Properties.Resources.Icon_128x128;
             tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
@@ -331,23 +353,19 @@
             tileViewItemElement3.Text = "02:30";
             tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement3.TextLocation = new System.Drawing.Point(5, 0);
-            tileViewItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement4.Appearance.Normal.ForeColor = System.Drawing.Color.Blue;
-            tileViewItemElement4.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement4.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement4.Column = this.Price;
             tileViewItemElement4.ColumnIndex = 2;
             tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement4.RowIndex = 2;
-            tileViewItemElement4.Text = "20.000";
+            tileViewItemElement4.Text = "Price";
             tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement4.TextLocation = new System.Drawing.Point(5, 0);
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
             this.tileView1.TileTemplate.Add(tileViewItemElement3);
             this.tileView1.TileTemplate.Add(tileViewItemElement4);
-            this.tileView1.ShowingPopupEditForm += new DevExpress.XtraGrid.Views.Grid.ShowingPopupEditFormEventHandler(this.tileView1_ShowingPopupEditForm);
             this.tileView1.ItemRightClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemRightClick);
+            this.tileView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.tileView1_FocusedRowChanged);
             this.tileView1.AsyncCompleted += new System.EventHandler(this.PopupMenuShowing);
             // 
             // Group
@@ -358,7 +376,7 @@
             this.Group.FieldName = "Group";
             this.Group.Name = "Group";
             this.Group.Visible = true;
-            this.Group.VisibleIndex = 1;
+            this.Group.VisibleIndex = 2;
             // 
             // grdTinhTrang
             // 
@@ -371,15 +389,15 @@
             this.grdTinhTrang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
             // 
-            // popupMenu1
+            // popupMenuPC
             // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.popupMenuPC.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnOpenPC),
+            new DevExpress.XtraBars.LinkPersistInfo(this.menuBlockPC),
+            new DevExpress.XtraBars.LinkPersistInfo(this.menuShowChat)});
+            this.popupMenuPC.Manager = this.barManager1;
+            this.popupMenuPC.Name = "popupMenuPC";
             // 
             // barButtonItem1
             // 
@@ -389,26 +407,27 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
-            // barButtonItem2
+            // btnOpenPC
             // 
-            this.barButtonItem2.Caption = "Mở máy trạm";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.SvgImage = global::Management.Properties.Resources.electronics_desktopmac2;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnOpenPC.Caption = "Mở máy trạm";
+            this.btnOpenPC.Id = 1;
+            this.btnOpenPC.ImageOptions.SvgImage = global::Management.Properties.Resources.electronics_desktopmac2;
+            this.btnOpenPC.Name = "btnOpenPC";
             // 
-            // barButtonItem3
+            // menuBlockPC
             // 
-            this.barButtonItem3.Caption = "Đóng máy trạm";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.ImageOptions.SvgImage = global::Management.Properties.Resources.close2;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.menuBlockPC.Caption = "Đóng máy trạm";
+            this.menuBlockPC.Id = 2;
+            this.menuBlockPC.ImageOptions.SvgImage = global::Management.Properties.Resources.close2;
+            this.menuBlockPC.Name = "menuBlockPC";
             // 
-            // barButtonItem4
+            // menuShowChat
             // 
-            this.barButtonItem4.Caption = "Trò chuyện";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.ImageOptions.SvgImage = global::Management.Properties.Resources.glyph_message2;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.menuShowChat.Caption = "Trò chuyện";
+            this.menuShowChat.Id = 3;
+            this.menuShowChat.ImageOptions.SvgImage = global::Management.Properties.Resources.glyph_message2;
+            this.menuShowChat.Name = "menuShowChat";
+            this.menuShowChat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.menuShowChat_ItemClick);
             // 
             // barManager1
             // 
@@ -423,9 +442,9 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4});
+            this.btnOpenPC,
+            this.menuBlockPC,
+            this.menuShowChat});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 4;
             this.barManager1.StatusBar = this.bar3;
@@ -492,6 +511,14 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 282);
             // 
+            // IsOnline
+            // 
+            this.IsOnline.Caption = "IsOnline";
+            this.IsOnline.FieldName = "IsOnline";
+            this.IsOnline.Name = "IsOnline";
+            this.IsOnline.Visible = true;
+            this.IsOnline.VisibleIndex = 4;
+            // 
             // TinhTrang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,7 +541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTinhTrang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuPC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -542,11 +569,11 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn NamePC;
         private DevExpress.XtraGrid.GridControl grdTinhTrang;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.PopupMenu popupMenuPC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnOpenPC;
+        private DevExpress.XtraBars.BarButtonItem menuBlockPC;
+        private DevExpress.XtraBars.BarButtonItem menuShowChat;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
@@ -555,5 +582,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.Columns.TileViewColumn Price;
+        private DevExpress.XtraGrid.Columns.TileViewColumn MacID;
+        private DevExpress.XtraGrid.Columns.TileViewColumn IsOnline;
     }
 }
