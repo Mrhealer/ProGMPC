@@ -22,7 +22,7 @@ namespace Management
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new DangNhap());
+            Application.Run(new App());
         }
     }
 }

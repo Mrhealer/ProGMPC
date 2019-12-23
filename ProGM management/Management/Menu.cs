@@ -144,87 +144,13 @@ namespace Management
         }
 
 
-        TcpListener serverSocket = new TcpListener(8888);
-        TcpClient clientSocket = default(TcpClient);
-        List<ClientItem> lsClients = new List<ClientItem>();
-        private void CreateSocketServer()
-        {
-            int counter = 0;
-            serverSocket.Start();
-            while (true)
-            {
-                if (serverSocket.Pending())
-                {
-                    counter += 1;
-                    clientSocket = serverSocket.AcceptTcpClient();
-                    // ckeck app
-
-                    //NetworkStream ns = clientSocket.GetStream();
-                    //byte[] arrByte = Encoding.UTF8.GetBytes("Xin chào" + "$");
-                    //ns.Write(arrByte, 0, arrByte.Length);
-                    //ns.Flush();
-
-
-                    ClientItem _client = new ClientItem();
-                    _client.IP = "";
-                    _client.TcpClient = clientSocket;
-                    _client.frmChat = null;
-                    Thread thread = new Thread(() => DoWork(_client));
-                    thread.Start();
-                    lsClients.Add(_client);
-                }
-
-            }
-            clientSocket.Close();
-            serverSocket.Stop();
-        }
+     
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            CreateSocketServer();
         }
 
-        private void DoWork(ClientItem client)
-        {
-            while (client.TcpClient.Connected)
-            {
-                try
-                {
-                    string data = SocketBussiness.GetData(client.TcpClient);
-                    if (!string.IsNullOrEmpty(data))
-                    {
-                        var dataT = JsonConvert.DeserializeObject<dataSend>(data);
-                        if (dataT.type.Equals("CHAT"))
-                        {
-                            if (client.frmChat!=null && client.frmChat.IsDisposed)
-                            {
-                                client.frmChat = null;
-                            }
 
-                            if (client.frmChat == null)
-                            {
-                                client.frmChat = new frmChat();
-
-                            }
-   
-                            Invoke(new Action(() =>
-                            {
-                                
-                                client.frmChat.clientSocket = clientSocket;
-                                client.frmChat.UpdateHistory(dataT.name.ToUpper() + " Say: " + dataT.msg);
-                                client.frmChat.Text = dataT.name;
-                                client.frmChat.Show();
-                            }));
-
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
-        }
 
     }
 

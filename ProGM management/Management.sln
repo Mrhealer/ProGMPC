@@ -1,7 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Management", "Management\Management.csproj", "{2A4037D5-BC7E-43EC-85FF-0F5E35A9A3ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProGMClient", "ProGMClient\ProGMClient.csproj", "{5B31B1E1-6CB7-4BE4-82B6-AF62751D91D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketBussiness", "SocketBussiness\SocketBussiness.csproj", "{EC3F4872-214C-414F-AB35-70DAF3D197E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +19,19 @@ Global
 		{2A4037D5-BC7E-43EC-85FF-0F5E35A9A3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A4037D5-BC7E-43EC-85FF-0F5E35A9A3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A4037D5-BC7E-43EC-85FF-0F5E35A9A3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B31B1E1-6CB7-4BE4-82B6-AF62751D91D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B31B1E1-6CB7-4BE4-82B6-AF62751D91D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B31B1E1-6CB7-4BE4-82B6-AF62751D91D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B31B1E1-6CB7-4BE4-82B6-AF62751D91D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3F4872-214C-414F-AB35-70DAF3D197E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3F4872-214C-414F-AB35-70DAF3D197E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3F4872-214C-414F-AB35-70DAF3D197E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3F4872-214C-414F-AB35-70DAF3D197E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FF3EF51-92B8-4BEA-8898-9F134695E671}
 	EndGlobalSection
 EndGlobal

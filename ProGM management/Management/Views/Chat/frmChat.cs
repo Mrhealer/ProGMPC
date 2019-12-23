@@ -45,9 +45,9 @@ namespace Management.Views
                 ms.name = "Linh";
                 ms.msg = msg;
                 ms.type = "CHAT";
-                SocketBussiness.SendData(this.clientSocket, JsonConvert.SerializeObject(ms));
-                txtHistory.AppendText("Me: " + msg + Environment.NewLine);
-                txtMesseage.Text = "";
+                //SocketBussiness.SendData(this.clientSocket, JsonConvert.SerializeObject(ms));
+                //txtHistory.AppendText("Me: " + msg + Environment.NewLine);
+                //txtMesseage.Text = "";
 
             }
         }
