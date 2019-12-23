@@ -8,6 +8,6 @@ namespace Management.Model
 {
     public class AppDataStore
     {
-        public List<ClientItem> lsClients { set; get; }
+        
     }
 }

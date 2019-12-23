@@ -355,10 +355,7 @@
             this.ngPage6.Caption = "ngPage6";
             this.ngPage6.Name = "ngPage6";
             this.ngPage6.Size = new System.Drawing.Size(1317, 400);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+
             // 
             // Menu
             // 

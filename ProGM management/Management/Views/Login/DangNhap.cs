@@ -8,13 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using Quobject.SocketIoClientDotNet.Client;
 namespace Management.Views.DangNhap
 {
     public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
-        public DangNhap()
+        private App appMain;
+        public DangNhap(App app)
         {
+            this.appMain = app;
             InitializeComponent();
         }
 
@@ -37,5 +39,6 @@ namespace Management.Views.DangNhap
                 main.ShowDialog();
             }
         }
+
     }
 }
