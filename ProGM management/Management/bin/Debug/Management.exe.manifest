@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v19.1.dll" size="7135480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v19.1.dll" size="7159808">
       <assemblyIdentity name="DevExpress.Data.v19.1" version="19.1.4.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fexUwJaX2Ved+MFFZf8Q9QTHhpIm5Pzx9CitCfbIquw=</dsig:DigestValue>
+        <dsig:DigestValue>AgyeXhTY7f4t6dqJXKiUrzszidUlrAnvWNep/Z/pFXA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -930,14 +930,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Management.exe" size="296448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Management.exe" size="295936">
       <assemblyIdentity name="Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qx8hBw82jI7XcK3axjPvFiwnF/Guyksb8H6QpgGueD4=</dsig:DigestValue>
+        <dsig:DigestValue>lY7PdIa1MhFBVhc7qTu/Y+GFSK8lolGox93iIp9mdFA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -962,6 +962,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>+3tAbyuA7X9Cab9QEMEv+TAT5UlKmK6GKXmy46zkVBo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SocketBussiness.dll" size="14336">
+      <assemblyIdentity name="SocketBussiness" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3L9DIbiGGw1/NqiJHIidtYQLgIIc2xNovxszKR7BTjM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

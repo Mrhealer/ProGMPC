@@ -288,3 +288,6 @@ F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\ru\DevExpress.O
 F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.exe.manifest
 F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.application
 F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.csproj.CopyComplete
+E:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.App.resources
+E:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\SocketBussiness.dll
+E:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\SocketBussiness.pdb
