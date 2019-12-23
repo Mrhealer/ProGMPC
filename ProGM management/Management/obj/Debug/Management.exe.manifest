@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v19.1.dll" size="7135480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v19.1.dll" size="7159808">
       <assemblyIdentity name="DevExpress.Data.v19.1" version="19.1.4.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fexUwJaX2Ved+MFFZf8Q9QTHhpIm5Pzx9CitCfbIquw=</dsig:DigestValue>
+        <dsig:DigestValue>AgyeXhTY7f4t6dqJXKiUrzszidUlrAnvWNep/Z/pFXA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -906,6 +906,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EngineIoClientDotNet.dll" size="83968">
+      <assemblyIdentity name="EngineIoClientDotNet" version="0.9.22.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>N4TEkKPSNdhe5+c9uQzdcCg6x3csW3ck778R9fjMKAE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5225168">
       <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -930,14 +942,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Management.exe" size="296448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Management.exe" size="298496">
       <assemblyIdentity name="Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qx8hBw82jI7XcK3axjPvFiwnF/Guyksb8H6QpgGueD4=</dsig:DigestValue>
+        <dsig:DigestValue>Joxg5F9UR/DnCd06242BfyUoHGOawVq63Os4lHYS2fo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -965,13 +977,46 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Management.exe.config" size="2645">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SocketIoClientDotNet.dll" size="26624">
+      <assemblyIdentity name="SocketIoClientDotNet" version="0.9.13.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8mb9WDjVZ0AX9CdnFQNx6RiCr8PtBJY70L/3OTRH1AI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebSocket4Net.dll" size="90624">
+      <assemblyIdentity name="WebSocket4Net" version="0.14.1.0" publicKeyToken="EB4E154B696BF72A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>LiUy8Aqhg0RVcGbTwqmpXbsOgQk+SJQVRwTeUIB5cNU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Management.exe.config" size="3001">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>zPwswrL8xAFd5l8kcjPwoRTyxXH73MmnBlfK4h/aD8w=</dsig:DigestValue>
+      <dsig:DigestValue>k66dp2ta2yDbhiGnQQWaI68wEnjR1S3NqBJPIQQJxYY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Nodejs\Server.js" size="670">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EXni/9V/uv+ws2ts2BLhY8qAlaeuvi/ESXDv5heIn7M=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
