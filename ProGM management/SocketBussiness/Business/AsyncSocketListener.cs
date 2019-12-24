@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocketBussiness.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,13 +11,13 @@ namespace SocketBussiness.Business
 {
     public delegate void MessageReceivedHandler(int id, string msg);
     public delegate void MessageSubmittedHandler(int id, bool close);
-    public delegate void ClientDisconnectHandler(int id);
+    public delegate void DisconnectHandler(int id);
 
     public sealed class AsyncSocketListener : IAsyncSocketListener
     {
-        private const string IP= "127.0.0.1";
         private const ushort Port = 8000;
         private const ushort Limit = 250;
+        private const string Ip = "127.0.0.1";
 
         private static readonly IAsyncSocketListener instance = new AsyncSocketListener();
 
@@ -25,7 +26,7 @@ namespace SocketBussiness.Business
 
         public event MessageReceivedHandler MessageReceived;
         public event MessageSubmittedHandler MessageSubmitted;
-        public event ClientDisconnectHandler ClientDisconnect;
+        public event DisconnectHandler Disconnected;
 
         private AsyncSocketListener()
         {
@@ -43,7 +44,7 @@ namespace SocketBussiness.Business
         public void StartListening()
         {
             var host = Dns.GetHostEntry(string.Empty);
-            var ip =IPAddress.Parse(IP);
+            var ip = IPAddress.Parse(Ip);
             var endpoint = new IPEndPoint(ip, Port);
 
             try
@@ -102,35 +103,13 @@ namespace SocketBussiness.Business
                     Console.WriteLine("Client connected. Get Id " + id);
                 }
 
-                state.Listener.BeginReceive(state.Buffer, 0, state.BufferSize, SocketFlags.None, this.ReceiveCallback, state);
-                state.Listener.BeginDisconnect(false, DisconnectCallBack, state);
+                state.Listener.BeginReceive(state.Buffer, 0, state.BufferSize, SocketFlags.None, new AsyncCallback(this.ReceiveCallback), state);
             }
             catch (SocketException)
             {
                 // TODO:
             }
         }
-
-        public void DisconnectCallBack(IAsyncResult result)
-        {
-            var state = (IStateObject)result.AsyncState;
-            try
-            {
-                var ClientDisconnect = this.ClientDisconnect;
-
-                if (ClientDisconnect != null)
-                {
-                    ClientDisconnect(state.Id);
-                }
-                state.Reset();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
         public void ReceiveCallback(IAsyncResult result)
         {
             var state = (IStateObject)result.AsyncState;
@@ -144,25 +123,39 @@ namespace SocketBussiness.Business
                     state.Append(Encoding.UTF8.GetString(state.Buffer, 0, receive));
                 }
 
-                if (receive == state.BufferSize)
-                {
-                    state.Listener.BeginReceive(state.Buffer, 0, state.BufferSize, SocketFlags.None, this.ReceiveCallback, state);
-                }
-                else
-                {
-                    var messageReceived = this.MessageReceived;
 
-                    if (messageReceived != null)
+                state.Listener.BeginReceive(state.Buffer, 0, state.BufferSize, SocketFlags.None, new AsyncCallback(this.ReceiveCallback), state);
+
+                var messageReceived = this.MessageReceived;
+
+                if (messageReceived != null)
+                {
+                    messageReceived(state.Id, state.Text);
+                }
+
+                state.Reset();
+
+            }
+            catch (SocketException socketException)
+            {
+                //WSAECONNRESET, the other side closed impolitely
+                if (socketException.ErrorCode == 10054 || ((socketException.ErrorCode != 10004) && (socketException.ErrorCode != 10053)))
+                {
+                    // Complete the disconnect request.
+                    var disconnected = this.Disconnected;
+
+                    if (disconnected != null)
                     {
-                        messageReceived(state.Id, state.Text);
+                        disconnected(state.Id);
                     }
 
-                    state.Reset();
+                    state.Listener.Close();
+
                 }
             }
-            catch (SocketException)
+            catch (Exception)
             {
-                // TODO:
+
             }
         }
         #endregion
@@ -227,7 +220,6 @@ namespace SocketBussiness.Business
             }
         }
         #endregion
-
         public void Close(int id)
         {
             var state = this.GetClient(id);

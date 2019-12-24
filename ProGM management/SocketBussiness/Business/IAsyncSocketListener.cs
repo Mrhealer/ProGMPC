@@ -9,15 +9,14 @@ namespace SocketBussiness.Business
     {
         event MessageReceivedHandler MessageReceived;
 
-        event MessageSubmittedHandler MessageSubmitted;
-        event ClientDisconnectHandler ClientDisconnect;
+        event MessageSubmittedHandler MessageSubmitted; 
+        event DisconnectHandler Disconnected;
 
         void StartListening();
 
         bool IsConnected(int id);
 
         void OnClientConnect(IAsyncResult result);
-        void DisconnectCallBack(IAsyncResult result);
 
         void ReceiveCallback(IAsyncResult result);
 

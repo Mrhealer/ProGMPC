@@ -20,7 +20,7 @@ namespace ProGMClient
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new Main());
+            Application.Run(new App());
         }
     }
 }

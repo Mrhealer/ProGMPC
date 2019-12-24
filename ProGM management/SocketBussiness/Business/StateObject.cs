@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
+using System;
 using System.Net.Sockets;
 using System.Text;
 
@@ -14,16 +13,25 @@ namespace SocketBussiness.Business
         private readonly byte[] buffer = new byte[Buffer_Size];
         private readonly Socket listener;
         private readonly int id;
+        private readonly DateTime timeAccept;
         private StringBuilder sb;
 
         public StateObject(Socket listener, int id = -1)
         {
             this.listener = listener;
+            this.timeAccept = DateTime.Now;
             this.id = id;
             this.Close = false;
             this.Reset();
         }
 
+        public DateTime TimeAccept
+        {
+            get
+            {
+                return this.timeAccept;
+            }
+        }
         public int Id
         {
             get

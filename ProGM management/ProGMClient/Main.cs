@@ -19,21 +19,20 @@ namespace ProGMClient
     public partial class Main : DevExpress.XtraEditors.XtraForm
     {
         FormState frmMax;
-        AsyncClient asyncClient;
-        public Main()
+        App app_controller;
+        public Main(App _app)
         {
+            this.app_controller = _app;
             InitializeComponent();
             frmMax = new FormState();
             frmMax.Maximize(this);
-            asyncClient = new AsyncClient();
-            asyncClient.StartClient();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            frmDangNhap frmDangNhap = new frmDangNhap(frmMax, this);
+            frmDangNhap frmDangNhap = new frmDangNhap(frmMax, this, this.app_controller);
             frmDangNhap.KeyPreview = true;
-            asyncClient.Send("Xin chào", false);
             frmDangNhap.ShowDialog();
         }
     }

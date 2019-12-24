@@ -11,15 +11,19 @@ using DevExpress.XtraEditors;
 using System.Net.Sockets;
 using Management.Controller;
 using Newtonsoft.Json;
+using SocketBussiness.Model;
 
 namespace Management.Views
 {
     public partial class frmChat : DevExpress.XtraEditors.XtraForm
     {
         public delegate void UpdateTextBoxMethod(string text);
-        public TcpClient clientSocket { set; get; }
-        public frmChat()
+        App app_controller;
+        int IdClient;
+        public frmChat(int idClient, App app)
         {
+            this.IdClient = idClient;
+            this.app_controller = app;
             InitializeComponent();
         }
         public void UpdateHistory(string text)
@@ -40,17 +44,18 @@ namespace Management.Views
             string msg = txtMesseage.Text;
             if (!string.IsNullOrEmpty(msg))
             {
-                dataSend ms = new dataSend();
-                ms.from = "Linh";
-                ms.name = "Linh";
+                SocketReceivedData ms = new SocketReceivedData();
+                ms.msgFrom = "SERVER";
+                ms.msgTo = "SERVER";
                 ms.msg = msg;
                 ms.type = "CHAT";
-                //SocketBussiness.SendData(this.clientSocket, JsonConvert.SerializeObject(ms));
-                //txtHistory.AppendText("Me: " + msg + Environment.NewLine);
-                //txtMesseage.Text = "";
-
+                this.app_controller.asyncSocketListener.Send(this.IdClient,JsonConvert.SerializeObject(ms), false);
+                txtHistory.AppendText("Me: " + msg + Environment.NewLine);
+                txtMesseage.Text = "";
             }
+
         }
+        
 
         private void txtMesseage_KeyDown(object sender, KeyEventArgs e)
         {

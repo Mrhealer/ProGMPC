@@ -99,8 +99,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\SocketBussiness.cs" />
+    <Compile Include="App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App.Designer.cs">
+      <DependentUpon>App.cs</DependentUpon>
+    </Compile>
     <Compile Include="Business\SocketClient.cs" />
+    <Compile Include="Controller\PCExtention.cs" />
+    <Compile Include="Controller\SocketController.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +140,9 @@
     <Compile Include="View\TinhTien\frmTinhTien.Designer.cs">
       <DependentUpon>frmTinhTien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="App.resx">
+      <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,7 +174,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>

@@ -34,10 +34,12 @@ namespace Management
     {
         MenuObject objMenu = new MenuObject();
         TinhTrang userTinhTrang;
-        public Menu()
+        App app_controller;
+        public Menu(App app)
         {
+            this.app_controller = app;
             InitializeComponent();
-            userTinhTrang = new TinhTrang(objMenu);
+            userTinhTrang = new TinhTrang(objMenu, app_controller);
 
         }
 
@@ -100,7 +102,7 @@ namespace Management
             objMenu.frmWidth = this.Width;
             objMenu.frmMenuHeight = tileNavPaneMenu.Height;
             objMenu.frmMenuWidth = tileNavPaneMenu.Width;
-            TinhTrang usTinhTrang = new TinhTrang(objMenu);
+            TinhTrang usTinhTrang = new TinhTrang(objMenu, this.app_controller);
             ngPage1.Controls.Add(usTinhTrang);
 
         }
@@ -113,7 +115,7 @@ namespace Management
 
         private void navButton5_ElementClick(object sender, NavElementEventArgs e)
         {
-            if (navChiTiet.Tag == "detail")
+            if (navChiTiet.Tag.ToString() == "detail")
             {
                 ngPage1.Controls.Clear();
                 TinhTrangChiTiet userTinhTrangCT = new TinhTrangChiTiet(objMenu);
@@ -125,10 +127,10 @@ namespace Management
             }
             else
             {
-                if (navChiTiet.Tag == "big")
+                if (navChiTiet.Tag.ToString() == "big")
                 {
                     ngPage1.Controls.Clear();
-                    TinhTrang userTinhTrang = new TinhTrang(objMenu);
+                    TinhTrang userTinhTrang = new TinhTrang(objMenu,this.app_controller);
                     ngPage1.Controls.Add(userTinhTrang);
                     ngFrameMenu.SelectedPage = ngPage1;
                     navChiTiet.SuperTip.Items.Clear();
@@ -154,11 +156,4 @@ namespace Management
 
     }
 
-    public class ClientItem
-    {
-        public string IP { set; get; }
-        public TcpClient TcpClient { set; get; }
-        public frmChat frmChat { set; get; }
-        public frmTesst frmTesst { set; get; }
-    }
 }

@@ -16,11 +16,11 @@ namespace ProGMClient.View.TinhTien
 {
     public partial class frmTinhTien : DevExpress.XtraEditors.XtraForm
     {
-
-        public frmTinhTien()
+        App app_controller;
+        public frmTinhTien(App _app)
         {
+            this.app_controller = _app;
             InitializeComponent();
-
             this.Location = new Point(Screen.PrimaryScreen.Bounds.Right - this.Width, //should be (0,0)
                           Screen.PrimaryScreen.Bounds.Y);
             this.TopMost = true;
@@ -44,13 +44,13 @@ namespace ProGMClient.View.TinhTien
 
         private void btnOpenChat_Click(object sender, EventArgs e)
         {
-            var _frmChat = (frmChat)Application.OpenForms["frmChat"];
-            if (_frmChat == null)
+            app_controller.frmChat = (frmChat)Application.OpenForms["frmChat"];
+            if (app_controller.frmChat == null)
             {
-                _frmChat = new frmChat();
+                app_controller.frmChat = new frmChat(app_controller);
             }
-            _frmChat.TopMost = true;
-            _frmChat.Show();
+            app_controller.frmChat.TopMost = true;
+            app_controller.frmChat.Show();
         }
     }
 }

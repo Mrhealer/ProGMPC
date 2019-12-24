@@ -1,4 +1,4 @@
-﻿namespace Management
+﻿namespace ProGMClient
 {
     partial class App
     {
@@ -34,9 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 268);
+            this.ClientSize = new System.Drawing.Size(284, 236);
             this.Name = "App";
             this.Text = "App";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.App_FormClosing);
             this.Load += new System.EventHandler(this.App_Load);
             this.ResumeLayout(false);
 

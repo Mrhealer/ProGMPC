@@ -13,8 +13,10 @@ namespace Management.Views.DangNhap
 {
     public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
-        public DangNhap()
+        App app_controller;
+        public DangNhap(App app)
         {
+            this.app_controller = app;
             InitializeComponent();
         }
 
@@ -33,7 +35,7 @@ namespace Management.Views.DangNhap
             if (txtTaiKhoan.Text == "quoctv" || txtMatKhau.Text == "123456789")
             {
                 this.Hide();
-                Menu main = new Menu();
+                Menu main = new Menu(this.app_controller);
                 main.ShowDialog();
             }
         }

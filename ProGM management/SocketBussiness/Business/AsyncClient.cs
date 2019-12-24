@@ -91,22 +91,19 @@ namespace SocketBussiness.Business
                 state.Append(Encoding.UTF8.GetString(state.Buffer, 0, receive));
             }
 
-            if (receive == state.BufferSize)
-            {
-                state.Listener.BeginReceive(state.Buffer, 0, state.BufferSize, SocketFlags.None, this.ReceiveCallback, state);
-            }
-            else
-            {
-                var messageReceived = this.MessageReceived;
 
-                if (messageReceived != null)
-                {
-                    messageReceived(this, state.Text);
-                }
+            state.Listener.BeginReceive(state.Buffer, 0, state.BufferSize, SocketFlags.None, this.ReceiveCallback, state);
 
-                state.Reset();
-                this.received.Set();
+            var messageReceived = this.MessageReceived;
+
+            if (messageReceived != null)
+            {
+                messageReceived(this, state.Text);
             }
+
+            state.Reset();
+            this.received.Set();
+
         }
         #endregion
 

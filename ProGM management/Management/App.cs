@@ -9,41 +9,83 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Management.Views.DangNhap;
 using SocketBussiness.Business;
+using SocketBussiness.Model;
+using Newtonsoft.Json;
+using Management.Views;
+using System.Threading;
 
 namespace Management
 {
     public partial class App : Form
     {
-       IAsyncSocketListener asyncSocketListener;
+        public IAsyncSocketListener asyncSocketListener;
+        public List<SocketClients> clients = new List<SocketClients>();
         public App()
         {
             InitializeComponent();
-        }
-
-        private void App_Load(object sender, EventArgs e)
-        {
             asyncSocketListener = AsyncSocketListener.Instance;
             asyncSocketListener.MessageReceived += AsyncSocketListener_MessageReceived;
-            asyncSocketListener.ClientDisconnect += AsyncSocketListener_ClientDisconnect;
-            backgroundWorker1.RunWorkerAsync();
-         //   this.Hide();
-            DangNhap frmlogin = new DangNhap();
-            frmlogin.ShowDialog();
+            asyncSocketListener.Disconnected += AsyncSocketListener_Disconnected;
         }
-
-        private void AsyncSocketListener_ClientDisconnect(int id)
+  
+        #region socket event        
+        private void AsyncSocketListener_Disconnected(int id)
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Client ID: " + id + "  vừa mất kết nối", "Thông báo");
         }
-
         private void AsyncSocketListener_MessageReceived(int id, string msg)
         {
-       
-        }
+            try
+            {
+                var obj = JsonConvert.DeserializeObject<SocketReceivedData>(msg);
+                if (obj.type.Equals("AUTHORIZE"))
+                {
+                    SocketClients client = new SocketClients();
+                    client.id = id;
+                    client.macaddress = obj.macAddressFrom;
+                    clients.Add(client);
+                }
+                else if (obj.type.Equals("CHAT"))
+                {
+                    var client = clients.Where(c => c.macaddress == obj.macAddressFrom).SingleOrDefault();
+                    if (client != null)
+                    {
+                        if (client.frmChat == null || (client.frmChat != null && client.frmChat.Disposing))
+                        {
+                            client.frmChat = new frmChat(id, this);
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            asyncSocketListener.StartListening();
+                        }
+                        this.Invoke((Action)delegate
+                        {
+                            client.frmChat.UpdateHistory(obj.msg);
+                            client.frmChat.Show();
+                        });
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
+        #endregion
+
+        #region form event
+        private void App_Load(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(asyncSocketListener.StartListening)).Start();
+            this.Hide();
+            DangNhap frmlogin = new DangNhap(this);
+            frmlogin.ShowDialog();
+        }
+        #endregion
+    }
+
+    public class SocketClients
+    {
+        public int id { set; get; }
+        public string macaddress { set; get; }
+        public frmChat frmChat { set; get; }
     }
 }

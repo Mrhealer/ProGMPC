@@ -21,10 +21,10 @@ namespace Management.Views.TinhTrangHoatDong
 {
     public partial class TinhTrang : DevExpress.XtraEditors.XtraUserControl
     {
-
-        public TinhTrang(MenuObject obj)
+        App app_controller;
+        public TinhTrang(MenuObject obj, App app)
         {
-
+            this.app_controller = app;
             InitializeComponent();
             ConfigLayout.UpdateLayout(this, panelTinhTrang, grdTinhTrang, obj);
             InitData();

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Management.Model
+namespace ProGMClient.Controller
 {
-    public class AppDataStore
+    class SocketController
     {
-        public List<ClientItem> lsClients { set; get; }
     }
 }

@@ -11,25 +11,18 @@ using DevExpress.XtraEditors;
 using System.Net.Sockets;
 using ProGMClient.Business;
 using Newtonsoft.Json;
+using SocketBussiness.Model;
 
 namespace ProGMClient.View.Chat
 {
     public partial class frmChat : DevExpress.XtraEditors.XtraForm
     {
         public delegate void UpdateTextBoxMethod(string text);
-        public frmChat()
+        App app_controller;
+        public frmChat(App app)
         {
+            this.app_controller = app;
             InitializeComponent();
-        }
-
-        private void textEdit1_PathChanged(object sender, BreadCrumbPathChangedEventArgs e)
-        {
-
-        }
-
-        private void txtMesseage_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
 
         private void txtMesseage_KeyDown(object sender, KeyEventArgs e)
@@ -56,12 +49,12 @@ namespace ProGMClient.View.Chat
             string msg = txtMesseage.Text;
             if (!string.IsNullOrEmpty(msg))
             {
-                dataSend ms = new dataSend();
-                ms.from = "Linh";
-                ms.name = "Linh";
+                SocketReceivedData ms = new SocketReceivedData();
+                ms.msgFrom = "Linh";
+                ms.macAddressFrom = PCExtention.GetMacId();
                 ms.msg = msg;
                 ms.type = "CHAT";
-                //SocketBussiness.SendData(SocketBussiness.tcpClient,JsonConvert.SerializeObject(ms));
+                this.app_controller.asyncClient.Send(JsonConvert.SerializeObject(ms), false);
                 txtHistory.AppendText("Me: " + msg + Environment.NewLine);
                 txtMesseage.Text = "";
             }

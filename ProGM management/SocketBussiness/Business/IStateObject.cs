@@ -8,6 +8,7 @@ namespace SocketBussiness.Business
 {
     public interface IStateObject
     {
+        DateTime TimeAccept { get; }
         int BufferSize { get; }
 
         int Id { get; }

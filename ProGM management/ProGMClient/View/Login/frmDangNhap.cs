@@ -140,7 +140,7 @@ namespace ProGMClient.View.Login
                 Registry.SetValue(keyName, "Scancode Map", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0x3, 0, 0, 0,
                     0, 0, 0x1d, 0, 0, 0, 0x1d, 0xe0, 0, 0, 0, 0 }, RegistryValueKind.Binary);
             }
-            catch (Exception exp)
+            catch (Exception)
             {
                 return;
             }
@@ -157,14 +157,14 @@ namespace ProGMClient.View.Login
                 regkey.SetValue("DisableTaskMgr", keyValueInt);
                 regkey.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
 
         }
         #endregion
 
-
+        App app_controller;
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -176,7 +176,7 @@ namespace ProGMClient.View.Login
                 frmMain.Hide();
                 frmState.Restore(frmMain);
                 //frmMain.Hide();
-                frmTinhTien frmNguoiChoi = new frmTinhTien();
+                frmTinhTien frmNguoiChoi = new frmTinhTien(this.app_controller);
                 frmNguoiChoi.Show();
                 frmNguoiChoi.TopMost = true;
 
@@ -187,10 +187,11 @@ namespace ProGMClient.View.Login
        
 
 
-        public frmDangNhap(FormState frmState, Main frmMain)
+        public frmDangNhap(FormState frmState, Main frmMain , App _app)
         {
             this.frmState = frmState;
             this.frmMain = frmMain;
+            this.app_controller = _app;
             InitializeComponent();
         }
 
