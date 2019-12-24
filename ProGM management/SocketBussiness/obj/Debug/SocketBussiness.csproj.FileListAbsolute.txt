@@ -3,3 +3,8 @@ E:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\bin\Debug\SocketBuss
 E:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\obj\Debug\SocketBussiness.dll
 E:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\obj\Debug\SocketBussiness.pdb
 E:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\obj\Debug\SocketBussiness.csprojAssemblyReference.cache
+F:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\bin\Debug\SocketBussiness.dll
+F:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\bin\Debug\SocketBussiness.pdb
+F:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\obj\Debug\SocketBussiness.csprojAssemblyReference.cache
+F:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\obj\Debug\SocketBussiness.dll
+F:\PROJECT WINFORM\ProGMPC\ProGM management\SocketBussiness\obj\Debug\SocketBussiness.pdb

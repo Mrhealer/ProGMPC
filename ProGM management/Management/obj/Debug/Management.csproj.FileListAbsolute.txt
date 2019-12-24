@@ -291,3 +291,6 @@ F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.cspr
 E:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.App.resources
 E:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\SocketBussiness.dll
 E:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\SocketBussiness.pdb
+F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\SocketBussiness.dll
+F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\bin\Debug\SocketBussiness.pdb
+F:\PROJECT WINFORM\ProGMPC\ProGM management\Management\obj\Debug\Management.App.resources

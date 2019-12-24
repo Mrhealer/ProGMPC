@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v19.1.dll" size="7159808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v19.1.dll" size="7135480">
       <assemblyIdentity name="DevExpress.Data.v19.1" version="19.1.4.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AgyeXhTY7f4t6dqJXKiUrzszidUlrAnvWNep/Z/pFXA=</dsig:DigestValue>
+        <dsig:DigestValue>fexUwJaX2Ved+MFFZf8Q9QTHhpIm5Pzx9CitCfbIquw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -937,7 +937,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lY7PdIa1MhFBVhc7qTu/Y+GFSK8lolGox93iIp9mdFA=</dsig:DigestValue>
+        <dsig:DigestValue>YOokk/neYGxMw91hNhYEbAEb++hu84y98zK+3k8x/lc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -966,14 +966,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SocketBussiness.dll" size="14336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SocketBussiness.dll" size="14848">
       <assemblyIdentity name="SocketBussiness" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3L9DIbiGGw1/NqiJHIidtYQLgIIc2xNovxszKR7BTjM=</dsig:DigestValue>
+        <dsig:DigestValue>i+1zTdy9t/PlZdCvdB05q0/z7oNFUAc1TF/4aJfwdDQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
