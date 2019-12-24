@@ -1,6 +1,6 @@
 ﻿namespace ProGMClient
 {
-    partial class Main
+    partial class frmLock
     {
         /// <summary>
         /// Required designer variable.

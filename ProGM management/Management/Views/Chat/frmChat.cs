@@ -45,8 +45,7 @@ namespace Management.Views
             if (!string.IsNullOrEmpty(msg))
             {
                 SocketReceivedData ms = new SocketReceivedData();
-                ms.msgFrom = "SERVER";
-                ms.msgTo = "SERVER";
+                ms.msgFrom = "Nhân viên:";
                 ms.msg = msg;
                 ms.type = "CHAT";
                 this.app_controller.asyncSocketListener.Send(this.IdClient,JsonConvert.SerializeObject(ms), false);

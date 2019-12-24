@@ -57,7 +57,8 @@ namespace Management
                         }
                         this.Invoke((Action)delegate
                         {
-                            client.frmChat.UpdateHistory(obj.msg);
+                            client.frmChat.Text = obj.msgFrom;
+                            client.frmChat.UpdateHistory(obj.msgFrom+" Say: "+ obj.msg +DateTime.Now.ToString("     HH:ss dd/MM/yyyy"));
                             client.frmChat.Show();
                         });
                     }
@@ -85,7 +86,9 @@ namespace Management
     public class SocketClients
     {
         public int id { set; get; }
+        public int userLogin { set; get; }
         public string macaddress { set; get; }
         public frmChat frmChat { set; get; }
+        public DateTime timerStart { set; get; }
     }
 }

@@ -16,11 +16,11 @@ using System.Windows.Forms;
 
 namespace ProGMClient
 {
-    public partial class Main : DevExpress.XtraEditors.XtraForm
+    public partial class frmLock : DevExpress.XtraEditors.XtraForm
     {
         FormState frmMax;
         App app_controller;
-        public Main(App _app)
+        public frmLock(App _app)
         {
             this.app_controller = _app;
             InitializeComponent();

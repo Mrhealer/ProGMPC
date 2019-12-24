@@ -5,11 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using ProGMClient.Business;
 using ProGMClient.View.Chat;
+using ProGMClient.View.Login;
+using ProGMClient.View.TinhTien;
 using SocketBussiness.Business;
 using SocketBussiness.Model;
 
@@ -18,7 +21,11 @@ namespace ProGMClient
     public partial class App : Form
     {
         public IAsyncClient asyncClient;
-        public frmChat  frmChat;
+        public frmChat frmChat;
+        public frmDangNhap frmDangNhap;
+        public frmTinhTien frmTinhTien;
+        public frmLock frmLock;
+        
         public App()
         {
             InitializeComponent();
@@ -26,7 +33,7 @@ namespace ProGMClient
             asyncClient.Connected += AsyncClient_Connected;
             asyncClient.MessageReceived += AsyncClient_MessageReceived;
             asyncClient.MessageSubmitted += AsyncClient_MessageSubmitted;
-            asyncClient.StartClient();
+
         }
         #region event socket
         private void AsyncClient_MessageSubmitted(IAsyncClient a, bool close)
@@ -36,13 +43,66 @@ namespace ProGMClient
 
         private void AsyncClient_MessageReceived(IAsyncClient a, string msg)
         {
-            asyncClient.Receive();
-            //throw new NotImplementedException();
+            try
+            {
+                var obj = JsonConvert.DeserializeObject<SocketReceivedData>(msg);
+
+                switch (obj.type)
+                {
+                    case "AUTHORIZE":
+                        break;
+                    case "CHAT":
+                        if (this.frmChat == null || (this.frmChat != null && this.frmChat.Disposing))
+                        {
+                            this.frmChat = new frmChat(this);
+
+                        }
+                        this.Invoke((Action)delegate
+                        {
+                            this.frmChat.UpdateHistory(obj.msgFrom + " Say: " + obj.msg + DateTime.Now.ToString("     HH:ss dd/MM/yyyy"));
+                            this.frmChat.Show();
+                        });
+                        break;
+                    case "OPEN":
+                        if (this.frmTinhTien==null)
+                        {
+                            this.Invoke((Action)delegate
+                            {
+                                this.Hide();
+                                if (this.frmDangNhap != null)
+                                {
+                                    this.frmDangNhap.Hide();
+                                }
+                                if (this.frmLock != null)
+                                {
+                                    this.frmLock.Hide();
+                                }
+                                this.frmTinhTien = new frmTinhTien(this);
+                                this.frmTinhTien.Show();
+                            });
+                           
+                        }
+                        else if(this.frmTinhTien!=null && !this.frmTinhTien.Disposing)
+                        {
+
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         private void AsyncClient_Connected(IAsyncClient a)
         {
-            //throw new NotImplementedException();
+            resgisterMac();
+            asyncClient.Receive();
         }
         #endregion
 
@@ -50,10 +110,11 @@ namespace ProGMClient
 
         private void App_Load(object sender, EventArgs e)
         {
-            resgisterMac();
+            new Thread(new ThreadStart(asyncClient.StartClient)).Start();
+      
             this.Hide();
-            Main frmMain = new Main(this);
-            frmMain.ShowDialog();
+            this.frmLock  = new frmLock(this);
+            this.frmLock.ShowDialog();
         }
 
         private void App_FormClosing(object sender, FormClosingEventArgs e)

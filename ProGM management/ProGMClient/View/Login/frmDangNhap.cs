@@ -23,8 +23,9 @@ namespace ProGMClient.View.Login
 {
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        App app_controller;
         FormState frmState;
-        Main frmMain;
+        frmLock frmMain;
         #region disbale hot key
         public const int WH_KEYBOARD_LL = 13;
         public const int WM_KEYDOWN = 0x0100;
@@ -164,7 +165,7 @@ namespace ProGMClient.View.Login
         }
         #endregion
 
-        App app_controller;
+
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -172,22 +173,18 @@ namespace ProGMClient.View.Login
             {
                 HookStop();
                 this.Hide();
-                frmState.Restore(frmMain);
+                //frmState.Restore(frmMain);
                 frmMain.Hide();
-                frmState.Restore(frmMain);
-                //frmMain.Hide();
+                //frmState.Restore(frmMain);
+                ////frmMain.Hide();
                 frmTinhTien frmNguoiChoi = new frmTinhTien(this.app_controller);
+                app_controller.frmTinhTien = frmNguoiChoi;
                 frmNguoiChoi.Show();
                 frmNguoiChoi.TopMost = true;
-
-
             }
         }
-  
-       
 
-
-        public frmDangNhap(FormState frmState, Main frmMain , App _app)
+        public frmDangNhap(FormState frmState, frmLock frmMain, App _app)
         {
             this.frmState = frmState;
             this.frmMain = frmMain;
@@ -202,9 +199,11 @@ namespace ProGMClient.View.Login
 
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-           // DisableTaskManager();
-           // disable_Ctrl_Alt_Del();
-           // HookStart();
+            this.app_controller.frmDangNhap = this;
+
+            // DisableTaskManager();
+            // disable_Ctrl_Alt_Del();
+            // HookStart();
             string mac = GetMacId();
 
             var client = new RestClient("http://40.74.77.139/api?key=computer-detail&_strMacAddress=" + mac);
@@ -231,10 +230,10 @@ namespace ProGMClient.View.Login
 
         }
 
-       
 
 
-       private string GetMacId()
+
+        private string GetMacId()
         {
             var macAddr =
             (

@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using DevExpress.XtraGrid.Views.Tile;
 using DevExpress.XtraGrid.Views.Tile.ViewInfo;
 using DevExpress.XtraGrid.Views.Grid;
+using SocketBussiness.Model;
 
 namespace Management.Views.TinhTrangHoatDong
 {
@@ -117,6 +118,20 @@ namespace Management.Views.TinhTrangHoatDong
         {
             //var Id = tileView1.GetFocusedRowCellValue("MacID");
             //MessageBox.Show(Id.ToString(),"Thoong bao");
+
+        }
+
+        private void btnOpenPC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string mac = tileView1.GetFocusedRowCellValue("MacID").ToString();
+            mac = "60:03:08:99:0a:fe";
+            var client = this.app_controller.clients.Where(n => n.macaddress.Equals(mac)).SingleOrDefault();
+            if (client!=null)
+            {
+                SocketReceivedData ms = new SocketReceivedData();
+                ms.type = "OPEN";
+                this.app_controller.asyncSocketListener.Send(client.id, JsonConvert.SerializeObject(ms), false);
+            }
 
         }
     }

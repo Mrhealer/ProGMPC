@@ -63,6 +63,7 @@
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.Group = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.IsOnline = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.grdTinhTrang = new DevExpress.XtraGrid.GridControl();
             this.popupMenuPC = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -77,7 +78,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.IsOnline = new DevExpress.XtraGrid.Columns.TileViewColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelTinhTrang)).BeginInit();
             this.panelTinhTrang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
@@ -378,6 +378,14 @@
             this.Group.Visible = true;
             this.Group.VisibleIndex = 2;
             // 
+            // IsOnline
+            // 
+            this.IsOnline.Caption = "IsOnline";
+            this.IsOnline.FieldName = "IsOnline";
+            this.IsOnline.Name = "IsOnline";
+            this.IsOnline.Visible = true;
+            this.IsOnline.VisibleIndex = 4;
+            // 
             // grdTinhTrang
             // 
             this.grdTinhTrang.Location = new System.Drawing.Point(1, 50);
@@ -413,6 +421,7 @@
             this.btnOpenPC.Id = 1;
             this.btnOpenPC.ImageOptions.SvgImage = global::Management.Properties.Resources.electronics_desktopmac2;
             this.btnOpenPC.Name = "btnOpenPC";
+            this.btnOpenPC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpenPC_ItemClick);
             // 
             // menuBlockPC
             // 
@@ -510,14 +519,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1216, 49);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 282);
-            // 
-            // IsOnline
-            // 
-            this.IsOnline.Caption = "IsOnline";
-            this.IsOnline.FieldName = "IsOnline";
-            this.IsOnline.Name = "IsOnline";
-            this.IsOnline.Visible = true;
-            this.IsOnline.VisibleIndex = 4;
             // 
             // TinhTrang
             // 
