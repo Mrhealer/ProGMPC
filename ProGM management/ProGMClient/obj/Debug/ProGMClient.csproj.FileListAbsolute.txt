@@ -321,7 +321,6 @@ F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\bin\Debug\es\DevExpress.
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.csprojAssemblyReference.cache
-F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.Main.resources
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.Properties.Resources.resources
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.View.Chat.frmChat.resources
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.View.Login.frmDangNhap.resources
@@ -334,3 +333,4 @@ F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.cs
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.exe
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.pdb
 F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.App.resources
+F:\PROJECT WINFORM\ProGMPC\ProGM management\ProGMClient\obj\Debug\ProGMClient.frmLock.resources

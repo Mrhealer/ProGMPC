@@ -930,14 +930,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Management.exe" size="295936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Management.exe" size="296960">
       <assemblyIdentity name="Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YOokk/neYGxMw91hNhYEbAEb++hu84y98zK+3k8x/lc=</dsig:DigestValue>
+        <dsig:DigestValue>V5TbfoM+TRyKSOSnPIf4WB/A5/25/t/iq63ZTFK+z2s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
