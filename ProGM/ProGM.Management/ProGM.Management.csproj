@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78E580B3-50D9-45A8-8D01-530B3CF87A50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProGM.Management</RootNamespace>
+    <AssemblyName>ProGM.Management</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Data.v19.1" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.Images.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.1" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.Xpo.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraBars.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.1" />
+    <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraGrid.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraLayout.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraPrinting.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App.Designer.cs">
+      <DependentUpon>App.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\ConfigLayout.cs" />
+    <Compile Include="FormState.cs" />
+    <Compile Include="Model\MenuObject.cs" />
+    <Compile Include="Model\responseListPC.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Chat\frmChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Chat\frmChat.Designer.cs">
+      <DependentUpon>frmChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DichVu\DichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DichVu\DichVu.Designer.cs">
+      <DependentUpon>DichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login\DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhatKyHeThong\NhatKyHeThong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NhatKyHeThong\NhatKyHeThong.Designer.cs">
+      <DependentUpon>NhatKyHeThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhatKySuDung\NhatKySuDung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NhatKySuDung\NhatKySuDung.Designer.cs">
+      <DependentUpon>NhatKySuDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhomMay\NhomMay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NhomMay\NhomMay.Designer.cs">
+      <DependentUpon>NhomMay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhomNguoiDung\NhomNguoiDung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NhomNguoiDung\NhomNguoiDung.Designer.cs">
+      <DependentUpon>NhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmNapTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmNapTien.Designer.cs">
+      <DependentUpon>frmNapTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmNKNapTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmNKNapTien.Designer.cs">
+      <DependentUpon>frmNKNapTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmNKSuDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmNKSuDung.Designer.cs">
+      <DependentUpon>frmNKSuDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmSua.Designer.cs">
+      <DependentUpon>frmSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmThemMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\frmThemMoi.Designer.cs">
+      <DependentUpon>frmThemMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\TaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TinhTrangHoatDong\TinhTrang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TinhTrangHoatDong\TinhTrang.Designer.cs">
+      <DependentUpon>TinhTrang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TinhTrangHoatDong\TinhTrangChiTiet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TinhTrangHoatDong\TinhTrangChiTiet.Designer.cs">
+      <DependentUpon>TinhTrangChiTiet.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="App.resx">
+      <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Chat\frmChat.resx">
+      <DependentUpon>frmChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DichVu\DichVu.resx">
+      <DependentUpon>DichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhatKyHeThong\NhatKyHeThong.resx">
+      <DependentUpon>NhatKyHeThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhatKySuDung\NhatKySuDung.resx">
+      <DependentUpon>NhatKySuDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhomMay\NhomMay.resx">
+      <DependentUpon>NhomMay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhomNguoiDung\NhomNguoiDung.resx">
+      <DependentUpon>NhomNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoan\frmNapTien.resx">
+      <DependentUpon>frmNapTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoan\frmNKNapTien.resx">
+      <DependentUpon>frmNKNapTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoan\frmNKSuDung.resx">
+      <DependentUpon>frmNKSuDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoan\frmSua.resx">
+      <DependentUpon>frmSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoan\frmThemMoi.resx">
+      <DependentUpon>frmThemMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoan\TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TinhTrangHoatDong\TinhTrang.resx">
+      <DependentUpon>TinhTrang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TinhTrangHoatDong\TinhTrangChiTiet.resx">
+      <DependentUpon>TinhTrangChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProGM.Business\ProGM.Business.csproj">
+      <Project>{e9cd5469-8284-4a63-a935-d65963b0f9e6}</Project>
+      <Name>ProGM.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\actions_arrow1right.svg" />
+    <Content Include="Resources\bouser_32x32.png" />
+    <Content Include="Resources\bouser_32x321.png" />
+    <Content Include="Resources\business_dollarcircled.svg" />
+    <Content Include="Resources\business_dollarcircled1.svg" />
+    <Content Include="Resources\business_dollarcircled2.svg" />
+    <Content Include="Resources\clock.svg" />
+    <Content Include="Resources\close.svg" />
+    <Content Include="Resources\close1.svg" />
+    <Content Include="Resources\close2.svg" />
+    <Content Include="Resources\customer_32x32.png" />
+    <Content Include="Resources\den.png" />
+    <Content Include="Resources\detail.svg" />
+    <Content Include="Resources\down.svg" />
+    <Content Include="Resources\editingfillright_32x32.png" />
+    <Content Include="Resources\electronics_desktopmac.svg" />
+    <Content Include="Resources\electronics_desktopmac1.svg" />
+    <Content Include="Resources\electronics_desktopmac2.svg" />
+    <Content Include="Resources\forward_32x32.png" />
+    <Content Include="Resources\glyph_message.svg" />
+    <Content Include="Resources\glyph_message1.svg" />
+    <Content Include="Resources\glyph_message2.svg" />
+    <Content Include="Resources\group.svg" />
+    <Content Include="Resources\hoivien.svg" />
+    <Content Include="Resources\hoivien1.svg" />
+    <Content Include="Resources\home.svg" />
+    <Content Include="Resources\Icon.svg" />
+    <Content Include="Resources\Icon2.svg" />
+    <Content Include="Resources\Icon21.svg" />
+    <Content Include="Resources\Icon_128x128.png" />
+    <Content Include="Resources\Icon_128x1281.png" />
+    <Content Include="Resources\Icon_128x1282.png" />
+    <Content Include="Resources\Icon_16x16.png" />
+    <Content Include="Resources\Icon_32x32.png" />
+    <Content Include="Resources\Icon_32x321.png" />
+    <Content Include="Resources\Icon_32x322.png" />
+    <Content Include="Resources\Icon_32x323.png" />
+    <Content Include="Resources\Icon_32x324.png" />
+    <Content Include="Resources\Icon_32x325.png" />
+    <Content Include="Resources\Icon_32x326.png" />
+    <Content Include="Resources\Icon_32x327.png" />
+    <Content Include="Resources\Icon_64x64.png" />
+    <Content Include="Resources\menuchuan.svg" />
+    <Content Include="Resources\money.svg" />
+    <Content Include="Resources\nhommay.svg" />
+    <Content Include="Resources\offile.png" />
+    <Content Include="Resources\online.png" />
+    <Content Include="Resources\online.svg" />
+    <Content Include="Resources\online1.png" />
+    <Content Include="Resources\online1.svg" />
+    <Content Include="Resources\QR-code.png" />
+    <Content Include="Resources\question.svg" />
+    <Content Include="Resources\question1.svg" />
+    <Content Include="Resources\servermode.svg" />
+    <Content Include="Resources\service.svg" />
+    <Content Include="Resources\setup.svg" />
+    <Content Include="Resources\TurnOn.png" />
+    <Content Include="Resources\up.svg" />
+    <Content Include="Resources\vang.png" />
+    <Content Include="Resources\xanh.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
