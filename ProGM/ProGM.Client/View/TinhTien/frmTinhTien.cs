@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.Net.Sockets;
 using ProGM.Client.View.Chat;
 using ProGM.Business.SocketBusiness;
+using ProGM.Client.View.GoiDo;
 
 namespace ProGM.Client.View.TinhTien
 {
@@ -51,6 +52,12 @@ namespace ProGM.Client.View.TinhTien
             }
             app_controller.frmChat.TopMost = true;
             app_controller.frmChat.Show();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            frmGoiDo _frmgoido = new frmGoiDo();
+            _frmgoido.Show();
         }
     }
 }

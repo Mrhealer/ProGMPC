@@ -89,6 +89,7 @@
     <Compile Include="Controller\PCExtention.cs" />
     <Compile Include="Controller\SocketController.cs" />
     <Compile Include="FormState.cs" />
+    <Compile Include="Model\Food.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Chat\frmChat.cs">
@@ -96,6 +97,37 @@
     </Compile>
     <Compile Include="View\Chat\frmChat.Designer.cs">
       <DependentUpon>frmChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Custom\ButtonCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Custom\Constant.cs" />
+    <Compile Include="View\GoiDo\CartItemCallback.cs" />
+    <Compile Include="View\GoiDo\CategoryItemCallback.cs" />
+    <Compile Include="View\GoiDo\FoodItemCallback.cs" />
+    <Compile Include="View\GoiDo\frmGoiDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GoiDo\frmGoiDo.Designer.cs">
+      <DependentUpon>frmGoiDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GoiDo\uctrCartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\GoiDo\uctrCartItem.Designer.cs">
+      <DependentUpon>uctrCartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GoiDo\uctrFood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\GoiDo\uctrFood.Designer.cs">
+      <DependentUpon>uctrFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GoiDo\uctrItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\GoiDo\uctrItem.Designer.cs">
+      <DependentUpon>uctrItem.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Lock\frmLock.cs">
       <SubType>Form</SubType>
@@ -130,6 +162,18 @@
     </Compile>
     <EmbeddedResource Include="View\Chat\frmChat.resx">
       <DependentUpon>frmChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GoiDo\frmGoiDo.resx">
+      <DependentUpon>frmGoiDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GoiDo\uctrCartItem.resx">
+      <DependentUpon>uctrCartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GoiDo\uctrFood.resx">
+      <DependentUpon>uctrFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GoiDo\uctrItem.resx">
+      <DependentUpon>uctrItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lock\frmLock.resx">
       <DependentUpon>frmLock.cs</DependentUpon>
@@ -171,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProGM.Business\ProGM.Business.csproj">

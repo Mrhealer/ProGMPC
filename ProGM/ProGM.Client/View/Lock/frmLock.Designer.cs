@@ -30,16 +30,19 @@
         {
             this.SuspendLayout();
             // 
-            // Main
+            // frmLock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::ProGM.Client.Properties.Resources._1;
             this.ClientSize = new System.Drawing.Size(796, 371);
-            this.Name = "Main";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmLock";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

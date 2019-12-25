@@ -63,7 +63,9 @@ namespace ProGM.Management
         }
         private void AsyncSocketListener_Disconnected(int id)
         {
-            MessageBox.Show("Client ID: " + id + "  vừa mất kết nối", "Thông báo");
+            this.asyncSocketListener.Close(id);
+            this.clients = this.clients.Where(n => n.id != id).ToList();
+
         }
         private void AsyncSocketListener_MessageReceived(int id, string msg)
         {
